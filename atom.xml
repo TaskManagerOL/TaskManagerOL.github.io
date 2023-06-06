@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Don&#39;t Fall Asleep Now.</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2023-06-06T08:09:06.343Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>TaskManagerOL</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>垃圾堆</title>
+    <link href="http://example.com/2023/06/06/%E5%9E%83%E5%9C%BE%E5%A0%86/"/>
+    <id>http://example.com/2023/06/06/%E5%9E%83%E5%9C%BE%E5%A0%86/</id>
+    <published>2023-06-06T07:48:24.000Z</published>
+    <updated>2023-06-06T08:09:06.343Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="你在我的Blog中逛到了一个大的垃圾堆"><a href="#你在我的Blog中逛到了一个大的垃圾堆" class="headerlink" title="你在我的Blog中逛到了一个大的垃圾堆"></a>你在我的Blog中逛到了一个大的垃圾堆</h1><blockquote><p>“真想不明白为什么你要在垃圾堆里翻东西。”</p><p>你似乎没有理睬头上 <strong>路灯先生</strong> 说的话，继续在翻找着什么，</p><p>突然你找到一张很陈旧的 <strong>纸条</strong> ，奇怪的是， <strong>纸条</strong> 上并没有沾染污渍，你仔细观察，上面写道：</p></blockquote><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2023.06.05</span><br><span class="line">&quot;在了解vercel后本来萌发了自己纯手搓搭建一个Blog的想法（并将其作为某一个 <span class="strong">**考核**</span> 的作业）但是最后选择了另一个方案&quot;</span><br><span class="line">&quot;尽管如此，考虑到后来还会有人经过这一段路，我使用hexo简单搭建了这一个地方，用于暂时存储我在路上摘到的花和淋过的雨&quot;</span><br></pre></td></tr></table></figure><blockquote><p>后面的字变得扭曲，似乎不像是写给读者的。</p><p>“这个 <strong>纸条</strong> 挺重要的看上去，这么丢在垃圾堆里真的好吗？”你向 <strong>路灯先生</strong> 发问。</p><p><strong>路灯先生</strong> 只是继续洒下温和的光，不再说话。</p><p>该走了。</p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;你在我的Blog中逛到了一个大的垃圾堆&quot;&gt;&lt;a href=&quot;#你在我的Blog中逛到了一个大的垃圾堆&quot; class=&quot;headerlink&quot; title=&quot;你在我的Blog中逛到了一个大的垃圾堆&quot;&gt;&lt;/a&gt;你在我的Blog中逛到了一个大的垃圾堆&lt;/h1&gt;&lt;bloc</summary>
+      
+    
+    
+    
+    <category term="随笔" scheme="http://example.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="😶‍🌫️" scheme="http://example.com/tags/%F0%9F%98%B6%E2%80%8D%F0%9F%8C%AB%EF%B8%8F/"/>
+    
+  </entry>
+  
+</feed>
