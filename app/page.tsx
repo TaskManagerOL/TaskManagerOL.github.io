@@ -18,7 +18,7 @@ const IndexBox = () =>{
     setTimeout(() => setvisibleMianBox(true), 1500); // 延迟显示主盒子
   }, [boxWidthArr]);
   return (
-    <div className="w-4/5 h-screen min-h-[600px] flex items-center">
+    <div className="w-4/5 h-[50vw] min-h-[600px] flex items-center">
       {boxWidthArr.map((item, index) => (
           <div
             key={index}
@@ -44,16 +44,20 @@ const IndexBox = () =>{
         >   
 
           <div 
-            className='text-[#eee] text-[clamp(8px,7vw,120px)] select-none flex flex-col justify-center mt-[15vh]'
+            className='text-[#eee] text-[clamp(48px,6vw,120px)] select-none flex flex-col justify-center mt-[5vw]'
             style={{
               fontFamily:'SuperLobster',
             }}
           >
-            <div className='flex'>Hi <div className='hover:rotate-60 transition'>👋</div> Here,</div>
-            <div>TaskManagerOL.</div>
+            <div className='flex flex-wrap mx-[5rem]'>Hi <div className='hover:rotate-60 transition'>👋</div> Here,</div>
+            <div className='flex flex-wrap mx-[5rem]'>
+              <div>Task</div>
+              <div>Manager</div>
+              <div>OL.</div>
+            </div>
           </div>
           <div
-            className='text-[#eee] flex select-none flex-wrap'
+            className='text-[#eee] flex select-none flex-wrap justify-center w-full'
             style={{
               fontFamily:'Backso'
             }}
