@@ -28,10 +28,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      # Step 5: 导出静态文件
-      - name: Export static files
-        run: npm run export
-
       # Step 6: 部署到 GitHub Pages
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
