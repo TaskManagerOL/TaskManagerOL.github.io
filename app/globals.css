@@ -23,21 +23,21 @@
 
 @font-face {
   font-family: Backso;
-  src: url(../public/fonts/Backso.otf);
+  src: url(/fonts/Backso.otf);
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: SuperLobster;
-  src: url(../public/fonts/SuperLobster.ttf);
+  src: url(/fonts/SuperLobster.ttf);
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: KGPerfectPenmanship;
-  src: url(../public/fonts/KGPerfectPenmanship.otf);
+  src: url(/fonts/KGPerfectPenmanship.otf);
   font-weight: normal;
   font-style: normal;
 }
