@@ -18,7 +18,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16'  # 设置 Node.js 版本，确保和你的项目兼容
+          node-version: '18'  # 设置 Node.js 版本，确保和你的项目兼容
 
       # Step 3: 安装依赖
       - name: Install dependencies
