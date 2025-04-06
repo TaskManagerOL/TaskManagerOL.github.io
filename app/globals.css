@@ -19,6 +19,28 @@
   }
 }
 
+@font-face {
+  font-family: Backso;
+  src: url(/fonts/Backso.otf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: SuperLobster;
+  src: url(/fonts/SuperLobster.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: KGPerfectPenmanship;
+  src: url(/fonts/KGPerfectPenmanship.otf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 body {
   background: var(--background);
   color: var(--foreground);
