@@ -32,4 +32,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: build  # 部署到 gh-pages 分
+          branch: build 
+          folder: build
