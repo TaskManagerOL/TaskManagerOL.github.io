@@ -1,0 +1,38 @@
+name: React Deploy
+
+on:
+  push:
+    branches:
+      - main  # 只有推送到 main 分支时才会触发部署
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: 检出代码
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    # Step 2: 设置 Node.js 环境
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    # Step 3: 安装依赖
+    - name: Install dependencies
+      run: npm install
+
+    # Step 4: 构建项目
+    - name: Build
+      run: npm run build
+
+    # Step 5: 部署到 GitHub Pages
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        branch: gh-pages  # 部署到 gh-pages 分支
+        folder: build     # 指定构建输出的目录
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # 自动使用 GitHub 提供的 Token
