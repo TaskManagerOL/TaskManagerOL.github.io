@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 
 const IndexBox = () =>{
-  const [visibleBoxes, setVisibleBoxes] = useState([]);
+  const [visibleBoxes, setVisibleBoxes] = useState<number[]>([]);;
   const [visibleMainBox, setvisibleMianBox] = useState(false)
   const boxWidthArr = Array.from({ length: 10 }, (_, index) => index / 2 + 0.5);
   useEffect(() => {
