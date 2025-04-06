@@ -6,9 +6,7 @@ const nextConfig: NextConfig = {
   output: 'export',
   trailingSlash: true,  // 为了兼容 GitHub Pages
   reactStrictMode: true,
-  basePath: '/dist',
   assetPrefix: '.',
-  distDir: 'dist',
 };
 
 export default nextConfig;

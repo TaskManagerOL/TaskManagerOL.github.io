@@ -6,17 +6,16 @@ const IndexBox = () =>{
   const [visibleMainBox, setvisibleMianBox] = useState(false)
   const boxWidthArr = Array.from({ length: 10 }, (_, index) => index / 2 + 0.5);
   useEffect(() => {
-    const promise = new Promise<void>((resolve) => {
+    const animateBoxes = () => {
       boxWidthArr.forEach((_, index) => {
-        setTimeout(() => {
-          setVisibleBoxes((prev) => [...prev, index]); 
-          if(index === boxWidthArr.length-1)setTimeout(()=>resolve(),50)
-        }, index * 150); 
-      })  
-    }) 
-    promise.then(()=>{
-      setvisibleMianBox(true)
-    })
+        requestAnimationFrame(() => {
+          setVisibleBoxes((prev) => [...prev, index]);
+        });
+      });
+    };
+
+    animateBoxes();
+    setTimeout(() => setvisibleMianBox(true), 1500); // 延迟显示主盒子
   }, [boxWidthArr]);
   return (
     <div className="w-4/5 h-screen min-h-[600px] flex items-center">
@@ -26,12 +25,13 @@ const IndexBox = () =>{
             style={{
               width: `${item}%`,
               height: `${item * 14 + 5}%`,
-              opacity: visibleBoxes.includes(index) ? 1 : 0,
+              opacity:  0,
               transition: 'opacity 0.5s ease',
-              background: `rgb(${-item*20+150},${-item*20+150},${-item*20+150})`,
-              margin: `0 ${item+2}px 0 0`
+              background: `rgb(${-item * 20 + 150}, ${-item * 20 + 150}, ${-item * 20 + 150})`,
+              margin: `0 ${item + 2}px 0 0`,
+              animationDelay: `${index * 0.15}s`, // 动画延迟
             }}
-            className="rounded-l-3xl"
+            className="rounded-l-3xl animate-fade-in"
           ></div>
       ))}
       {
@@ -69,7 +69,7 @@ const IndexBox = () =>{
 const BlogBox = () => {
   return (
     <div 
-      className="w-4/5 my-15 bg-[#a9a9a9] relative flex flex-wrap"
+      className="w-4/5 my-[3rem] bg-[#a9a9a9] relative flex flex-wrap"
     >
       <div 
         className='absolute top-[-6rem] left-2 text-[100px] font-bold'
@@ -96,7 +96,7 @@ const BlogBox = () => {
 const ProjectBox = () => {
   return (
     <div 
-      className="w-4/5 h-[700px] my-15 bg-[#a9a9a9] relative flex flex-wrap"
+      className="w-4/5 h-[700px] my-[3rem] bg-[#a9a9a9] relative flex flex-wrap"
     >
       <div 
         className='absolute top-[-6rem] left-2 text-[100px] font-bold'
