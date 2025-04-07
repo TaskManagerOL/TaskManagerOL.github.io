@@ -157,11 +157,6 @@ const ProjectBox = () => {
       >
         Project.
       </div>
-      <div
-        className='w-1/2 min-w-[300px] bg-[#616161]'
-      >
-
-      </div>
     </div>
   )
 }

@@ -136,6 +136,8 @@
   }
 }
 
+
+
 .animate-typing{
   position: relative;
 }
@@ -151,6 +153,6 @@
   overflow: hidden;
   color: #fff;
   width: 0;
-  animation: typing 1.5s steps(9) .5s forwards, blink 0.75s step-end 5,disappear 0.15s 4s forwards,warning 0.5s 5s forwards ;
+  animation: typing 1.5s steps(9) .5s forwards, blink 0.75s step-end 10,disappear 0.15s 8s forwards,warning 0.5s 9s forwards ;
 }
 
