@@ -42,6 +42,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: TT;
+  src: url(/fonts/TT.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -55,3 +62,30 @@
   animation: fade-in 0.5s ease forwards;
 }
 
+@keyframes triangle {
+  0% {
+    border-radius: 0px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  25% {
+    border-radius: 20px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0);
+  }
+  50% {
+    border-radius: 0px;
+    clip-path: polygon(0 0, 100% 0, 50% 50%, 0 0);
+  }
+  75% {
+    border-radius: 20px;
+    clip-path: polygon(0 30%, 0 0, 30% 0,80% 80%);
+  }
+}
+
+.animate-triangle {
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 0px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  animation: triangle 12s ease forwards infinite;
+}

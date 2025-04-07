@@ -38,6 +38,14 @@ export default function RootLayout({
             font-style: normal;
             font-display: swap
           }
+
+          @font-face {
+            font-family: TT;
+            src: url(./fonts/TT.ttf);
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap
+          }
         `}</style>
         {children}
       </body>
