@@ -89,3 +89,68 @@
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   animation: triangle 12s ease forwards infinite;
 }
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 225px;
+  }
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-right: 4px solid white;
+  }
+  100% {
+    border-right: 4px solid transparent;
+  }
+}
+
+@keyframes warning{
+  0%{
+    opacity: 0;
+    visibility: visible;
+    content: '!Time out';
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+  }
+  100%{
+    opacity: 1;
+    visibility: visible;
+    content: '!Time out';
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+  }
+}
+
+.animate-typing{
+  position: relative;
+}
+
+.animate-typing::after {
+  position: absolute;
+  left: -112px;
+  top: -50px;
+  content: 'git push↲';
+  font-family: 'Courier New', monospace;
+  font-size: 2.6rem;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #fff;
+  width: 0;
+  animation: typing 1.5s steps(9) .5s forwards, blink 0.75s step-end 5,disappear 0.15s 4s forwards,warning 0.5s 5s forwards ;
+}
+
