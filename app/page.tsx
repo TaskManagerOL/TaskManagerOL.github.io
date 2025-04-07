@@ -4,7 +4,23 @@ import React, { useState, useEffect } from 'react';
 const IndexBox = () =>{
   const [visibleBoxes, setVisibleBoxes] = useState<number[]>([]);;
   const [visibleMainBox, setvisibleMianBox] = useState(false)
-  const boxWidthArr = Array.from({ length: 10 }, (_, index) => index / 2 + 0.5);
+  const [isMobile, setIsMobile] = useState(false); // 新增设备检测状态
+  const boxWidthArr = Array.from({ length:10 }, (_, index) => index / 2 + 0.5);
+  
+  // 检测设备类型
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // 判断屏幕宽度是否小于等于768px
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // 初始检查设备类型
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   useEffect(() => {
     const animateBoxes = () => {
       boxWidthArr.forEach((_, index) => {
@@ -19,21 +35,24 @@ const IndexBox = () =>{
   }, [boxWidthArr]);
   return (
     <div className="w-4/5 h-[50vw] min-h-[600px] flex items-center">
-      {boxWidthArr.map((item, index) => (
+      {boxWidthArr.map((item, index) => {
+        if (isMobile && index < 5)return null;
+        return (
           <div
             key={index}
             style={{
               width: `${item}%`,
               height: `${item * 14 + 5}%`,
-              opacity:  0,
-              transition: 'opacity 0.5s ease',
+              opacity: 0,
+              transition: "opacity 0.5s ease",
               background: `rgb(${-item * 20 + 150}, ${-item * 20 + 150}, ${-item * 20 + 150})`,
               margin: `0 ${item + 2}px 0 0`,
-              animationDelay: `${index * 0.15}s`, // 动画延迟
+              animationDelay: `${index * 0.15}s`, 
             }}
             className="rounded-l-3xl animate-fade-in"
           ></div>
-      ))}
+        );
+      })}
       {
         <div 
           className="w-2/3 h-4/5 bg-[#303030] rounded-3xl flex flex-col justify-around items-center"
@@ -122,7 +141,7 @@ const ProjectBox = () => {
 
 export default function Home() {
   return (
-    <div className="w-full h-auto flex justify-center items-center bg-[#fefbf5] flex-col">
+    <div className="w-full h-auto flex justify-center items-center bg-[#fefbf5] flex-col overflow-hidden">
       <IndexBox/>
       <BlogBox/>
       <ProjectBox/>
