@@ -68,6 +68,14 @@ export default function RootLayout({
             background-repeat: no-repeat;
             scale:0.5;
           }
+
+          .telegram {
+            width: 64px;
+            height: 64px;
+            background-image: url(./svg/telegram.svg);
+            transform: scale(0.9);
+            background-repeat: no-repeat;
+          }
         `}</style>
         {children}
       </body>

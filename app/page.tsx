@@ -93,7 +93,7 @@ const BlogBox = () => {
       className="w-4/5 mt-[5rem] mb-[15rem] bg-[#a9a9a9] relative flex flex-wrap justify-center"
     >
       <div 
-        className='absolute top-[-4.5rem] md:top-[-6rem] left-2 text-[70px] md:text-[100px] font-bold z-50'
+        className='absolute top-[-4.5rem] md:top-[-6rem] left-2 text-[70px] md:text-[100px] font-bold z-30'
         style={{
           fontFamily:'KGPerfectPenmanship'
         }}
@@ -150,7 +150,7 @@ const ProjectBox = () => {
       className="w-4/5 my-[3rem] bg-[#a9a9a9] relative flex flex-wrap mb-[15rem]"
     >
       <div 
-        className='absolute top-[-5rem] left-2 text-[80px] font-bold md:text-[100px] md:top-[-6rem] z-50'
+        className='absolute top-[-5rem] left-2 text-[80px] font-bold md:text-[100px] md:top-[-6rem] z-30'
         style={{
           fontFamily:'KGPerfectPenmanship'
         }}
@@ -172,7 +172,7 @@ const ProjectBox = () => {
           <div className='animate-tasklist'>T</div>
         </div>
         <div className='w-3/5 text-[#000] tracking-[-0.3px] transition-all group-hover:mt-2 text-center mb-[40px]'>
-          Can I complete all ddl's while suffering from amnesia.A TODO site.
+          Can I complete all deadline while suffering from amnesia.A TODO site.
         </div>
         <div className='absolute bg-black w-[80px] md:w-[120px] h-[40px] md:h-[60px] right-[10px] md:right-[40px] top-[-60px] transition-all ease-in-out duration-200 text-[#fff] flex justify-center items-center group-hover:top-0'>
           <div className='mb-[20px] opacity-0 transition-all duration-200 ease-in group-hover:opacity-100 group-hover:mb-0 text-[12px] tracking-[-0.3px]'>view project</div>
@@ -223,9 +223,89 @@ const BottomWave = () => {
   );
 };
 
-export default function Home() {
+const GithubIcon = ({ onClick, value }: { onClick: () => void, value: boolean }) => {
+  const [firstTime,setFirstTime] = useState(false)
+  useEffect(()=>{
+    if(value)setFirstTime(true)
+  },[value])
   return (
-    <div className="w-full h-auto flex justify-center items-center bg-[#fefbf5] flex-col overflow-hidden relative">
+    <div 
+      className='absolute top-[1vw] right-[2vw] cursor-pointer z-50 flex justify-center items-center' 
+      onClick={onClick}
+      style={{position:value?'fixed':'absolute'}}
+    >
+      <div 
+        className={`${!firstTime?'animate-changeIcon1':(value?'animate-changeIcon2':'animate-changeIcon3')} w-[64px] h-[64px] transition-all`}
+        key={value?'ani1':'ani2'}
+      ></div>
+    </div>
+  )
+}
+
+const HoverLever = ({ value,styleArr }: { value: Boolean,styleArr: Array }) => {
+  return (
+    <div
+      className={`fixed bg-[#1f4954] z-40 animate-sayhi  ${
+        value ? 'animate-sayhi' : 'animate-saybye'
+      }`}
+      style={{
+        top: `${styleArr[1] - styleArr[2] / 80}px`,
+        left: `${styleArr[0] - styleArr[2] / 80}px`,
+        width: `${styleArr[2] / 40}px`,
+        height:  `${styleArr[2] / 40}px`,
+      }}
+      key={value ? 'sayhi' : 'saybye'}
+    ></div>
+  )
+}
+
+const HoverText = ({value}:{value:Boolean}) => {
+  const [firstTime,setFirstTime] = useState(false)
+  useEffect(()=>{
+    if(value)setFirstTime(true)
+  },[value])
+  return(
+    <div 
+      className='absolute w-screen h-screen top-0 left-0 z-50 flex justify-center items-center'  
+    >
+      <div 
+        className={`${!firstTime?'notext':value?'animate-havetext':'animate-notext'}`}
+        key={value?'text':'no'}
+      >
+        <div className='flex justify-center items-center relative w-[200px] h-[80px] rounded-[1000px] bg-[#285d6d]'>
+          <a href="https://github.com/TaskManagerOL" target='_blank'>
+            <div className='animate-changeIcon1 w-[64px] h-[64px] transition-all'></div>
+          </a>
+          <a href="https://t.me/TaskManagerOL" target='_blank'>
+            <div className='telegram'></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default function Home() {
+  const [hoverValue, setHoverValue] = useState(false);
+  const [mouseclick,setMouseclick] = useState(['0','0','0'])
+  const handleIconClick = (e: MouseEvent) => {
+    setHoverValue(!hoverValue);
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+    const length = Math.max(window.innerWidth,window.innerHeight)
+    setMouseclick([
+      mouseX,
+      mouseY,
+      length,
+    ])
+  };
+  return (
+    <div 
+      className="w-full h-auto flex justify-center items-center bg-[#fefbf5] flex-col overflow-hidden relative"
+    >
+      <HoverLever value={hoverValue} styleArr={mouseclick}/>
+      <HoverText value={hoverValue} />
+      <GithubIcon onClick={handleIconClick} value={hoverValue}/>
       <IndexBox/>
       <BlogBox/>
       <ProjectBox/>
