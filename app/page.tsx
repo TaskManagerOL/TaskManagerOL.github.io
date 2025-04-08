@@ -191,7 +191,7 @@ const BottomWave = () => {
     'translateX(0)',
   ]);
   useEffect(() => {
-    const mousemove = (e) => {
+    const mousemove = (e: MouseEvent) => {
       const mouseX = e.clientX;
       const windowWidth = document.documentElement.clientWidth;
       const rate = mouseX / windowWidth;

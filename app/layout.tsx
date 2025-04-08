@@ -46,6 +46,28 @@ export default function RootLayout({
             font-style: normal;
             font-display: swap
           }
+
+          .rollship {
+            width: 80px;
+            height: 58px;
+            background-image: url(./svg/ship.svg);
+            background-repeat: no-repeat;
+            transform-origin: center center;
+            animation: rollship 5s linear infinite;
+          }
+
+
+          .lighter {
+            position: absolute;
+            right: -140px;
+            bottom: -30px;
+            z-index: 4;
+            width: 600px;
+            height: 400px;
+            background-image: url(./svg/lighter.svg);
+            background-repeat: no-repeat;
+            scale:0.5;
+          }
         `}</style>
         {children}
       </body>
