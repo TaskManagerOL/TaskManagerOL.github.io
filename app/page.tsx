@@ -242,7 +242,7 @@ const GithubIcon = ({ onClick, value }: { onClick: () => void, value: boolean })
   )
 }
 
-const HoverLever = ({ value,styleArr }: { value: Boolean,styleArr: Array }) => {
+const HoverLever = ({ value,styleArr }: { value: Boolean,styleArr: Array[string] }) => {
   return (
     <div
       className={`fixed bg-[#1f4954] z-40 animate-sayhi  ${
