@@ -6,7 +6,11 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        '4xl': '2500px',  // 如果需要更大的屏幕，添加 4xl
+      },
+    },
   },
   plugins: [],
 };
