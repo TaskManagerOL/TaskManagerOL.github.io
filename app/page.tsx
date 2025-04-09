@@ -272,7 +272,7 @@ const HoverText = ({value}:{value:Boolean}) => {
         className={`${!firstTime?'notext':value?'animate-havetext':'animate-notext'}`}
         key={value?'text':'no'}
       >
-        <div className='flex justify-center items-center relative w-[200px] h-[80px] rounded-[1000px] bg-[#285d6d]'>
+        <div className=' fixed flex justify-center items-center w-[200px] h-[80px] rounded-[1000px] bg-[#285d6d]'>
           <a href="https://github.com/TaskManagerOL" target='_blank'>
             <div className='animate-changeIcon1 w-[64px] h-[64px] transition-all'></div>
           </a>
