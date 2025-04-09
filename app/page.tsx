@@ -223,7 +223,7 @@ const BottomWave = () => {
   );
 };
 
-const GithubIcon = ({ onClick, value }: { onClick: () => void, value: boolean }) => {
+const GithubIcon = ({ onClick, value }: { onClick: React.MouseEventHandler<HTMLDivElement>, value: boolean }) => {
   const [firstTime,setFirstTime] = useState(false)
   useEffect(()=>{
     if(value)setFirstTime(true)
@@ -242,7 +242,7 @@ const GithubIcon = ({ onClick, value }: { onClick: () => void, value: boolean })
   )
 }
 
-const HoverLever = ({ value,styleArr }: { value: Boolean,styleArr: Array[string] }) => {
+const HoverLever = ({ value,styleArr }: { value: Boolean,styleArr: number[] }) => {
   return (
     <div
       className={`fixed bg-[#1f4954] z-40 animate-sayhi  ${
@@ -287,8 +287,8 @@ const HoverText = ({value}:{value:Boolean}) => {
 
 export default function Home() {
   const [hoverValue, setHoverValue] = useState(false);
-  const [mouseclick,setMouseclick] = useState(['0','0','0'])
-  const handleIconClick = (e: MouseEvent) => {
+  const [mouseclick,setMouseclick] = useState([0,0,0])
+  const handleIconClick :React.MouseEventHandler<HTMLDivElement> = (e) => {
     setHoverValue(!hoverValue);
     const mouseX = e.clientX;
     const mouseY = e.clientY;
