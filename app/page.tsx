@@ -244,7 +244,7 @@ const GithubIcon = ({ onClick, value }: { onClick: React.MouseEventHandler<HTMLD
 const HoverLever = ({ value,styleArr }: { value: Boolean,styleArr: number[] }) => {
   return (
     <div
-      className={`fixed bg-[#1f4954] z-40 animate-sayhi  ${
+      className={`fixed bg-[#0d1117] z-40 animate-sayhi  ${
         value ? 'animate-sayhi' : 'animate-saybye'
       }`}
       style={{
@@ -268,16 +268,32 @@ const HoverText = ({value}:{value:Boolean}) => {
       className='absolute w-screen h-screen top-0 left-0 z-50 flex justify-center items-center'  
     >
       <div 
-        className={`${!firstTime?'notext':value?'animate-havetext':'animate-notext'}`}
+        className={`${!firstTime?'notext':value?'animate-havetext':'animate-notext'} w-full h-full flex justify-center items-center transition-all`}
         key={value?'text':'no'}
       >
-        <div className='fixed flex justify-center items-center w-[300px] h-[80px] rounded-[1000px] bg-[#285d6d]'>
-          <a href="https://github.com/TaskManagerOL" target='_blank'>
-            <div className='animate-changeIcon1 w-[64px] h-[64px] transition-all'></div>
-          </a>
-          <a href="https://t.me/TaskManagerOL" target='_blank'>
-            <div className='telegram'></div>
-          </a>
+        <div className="fixed flex flex-col w-2/3 h-full rounded-3xl justify-center">
+          <div className='text-[#c9d1d9] text-[clamp(16px,3vw,24px)] font-[Backso] select-none flex flex-col justify-center items-start border-b-2 border-[#8b949e] pb-5 mb-5 text-center leading-[2rem]'>
+            <p className='my-[5px]'>你好！</p>
+            <p className='my-[5px]'>你可以叫我云云☁️☁️·前端工程师</p>
+            <p className='my-[5px]'>🐦‍🔥一个来自地球的万物探索家🐒</p>
+            <p className='my-[5px]'>对 计算机技术/美术设计/游戏制作/电影音乐 等一切事物感到十分好奇并积极探索✨</p>
+            <p className='my-[5px]'>情感细腻🥰做事必须规划📜执行事情雷厉风行🌩️思想的巨人行动的矮子🐚</p>
+            <p className='my-[5px]'>经常思考🤓、睡觉😪、游戏🤺与朋友们交流🤬以及忘记东西🤕</p>
+            <p className='my-[5px]'>经常思考🤓、睡觉😪、游戏🤺与朋友们交流🤬以及忘记东西🤕</p>
+            <p className='my-[5px]'>不好意思🤯我刚刚是不是说过这句👽</p>
+            <p className='my-[5px]'>想要和我交朋友？为什么不马上联系我❤️‍🔥！</p>
+            <p className='my-[5px]'>投递简历中🖋️......</p>
+          </div>
+          <div className='flex items-center'>
+            <div className='flex items-center'>
+              <a href="https://t.me/TaskManagerOL" target='_blank'>
+                <div className='iconSize telegram'></div>
+              </a>
+              <a href="https://github.com/TaskManagerOL" target='_blank'>
+                <div className='iconSize github'></div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
