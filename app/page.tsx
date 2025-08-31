@@ -27,10 +27,9 @@ const IndexBox = () =>{
         });
       });
     };
-
     animateBoxes();
-    setTimeout(() => setvisibleMianBox(true), 1500); // 延迟显示主盒子
-  }, [boxWidthArr]);
+    setTimeout(() => setvisibleMianBox(true), boxWidthArr.length * 0.15 * 1000); // 延迟显示主盒子
+  }, []);
   return (
     <div className="w-4/5 h-[50vw] min-h-[600px] flex items-center">
       {boxWidthArr.map((item, index) => {
