@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 
 const IndexBox = () =>{
   const [visibleBoxes, setVisibleBoxes] = useState<number[]>([]);;
-  const [visibleMainBox, setvisibleMianBox] = useState(false)
   const [isMobile, setIsMobile] = useState(false); // 新增设备检测状态
   const boxWidthArr = Array.from({ length:10 }, (_, index) => index / 2 + 0.5);
   
@@ -20,6 +19,8 @@ const IndexBox = () =>{
   }, []);
 
   useEffect(() => {
+    console.log(boxWidthArr.length * 0.15);
+    
     const animateBoxes = () => {
       boxWidthArr.forEach((_, index) => {
         requestAnimationFrame(() => {
@@ -28,7 +29,6 @@ const IndexBox = () =>{
       });
     };
     animateBoxes();
-    setTimeout(() => setvisibleMianBox(true), boxWidthArr.length * 0.15 * 1000); // 延迟显示主盒子
   }, []);
   return (
     <div className="w-4/5 h-[50vw] min-h-[600px] flex items-center">
@@ -52,13 +52,13 @@ const IndexBox = () =>{
       })}
       {
         <div 
-          className="w-2/3 h-4/5 bg-[#303030] rounded-3xl flex flex-col justify-around items-center"
+          className="w-2/3 h-4/5 bg-[#303030] rounded-3xl flex flex-col justify-around items-center animate-fade-in"
           style={{
-            opacity:visibleMainBox?1:0,
-            transition: 'opacity 0.5s ease'
+            opacity: 0,
+            transition: 'opacity 0.5s ease',
+            animationDelay: `${boxWidthArr.length * 0.15}s`, 
           }}
         >   
-
           <div 
             className='text-[#eee] text-[clamp(48px,6vw,120px)] select-none flex flex-col justify-center mt-[5vw] items-center md:items-start'
             style={{
@@ -271,7 +271,7 @@ const HoverText = ({value}:{value:Boolean}) => {
         className={`${!firstTime?'notext':value?'animate-havetext':'animate-notext'}`}
         key={value?'text':'no'}
       >
-        <div className=' fixed flex justify-center items-center w-[200px] h-[80px] rounded-[1000px] bg-[#285d6d]'>
+        <div className='fixed flex justify-center items-center w-[300px] h-[80px] rounded-[1000px] bg-[#285d6d]'>
           <a href="https://github.com/TaskManagerOL" target='_blank'>
             <div className='animate-changeIcon1 w-[64px] h-[64px] transition-all'></div>
           </a>
