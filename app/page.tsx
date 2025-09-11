@@ -89,7 +89,7 @@ const IndexBox = () =>{
 const BlogBox = () => {
   return (
     <div 
-      className="w-4/5 mt-[5rem] mb-[15rem] bg-[#a9a9a9] relative flex flex-wrap justify-center"
+      className="w-4/5 my-[3rem]  mb-[15rem] bg-[#a9a9a9] relative flex flex-wrap justify-center"
     >
       <div 
         className='absolute top-[-4.5rem] md:top-[-6rem] left-2 text-[70px] md:text-[100px] font-bold z-30'
@@ -101,7 +101,7 @@ const BlogBox = () => {
       </div>
 
       <a
-        className='w-full h-[500px] md:h-[700px]  bg-[#314964] flex justify-center items-center lg:w-1/2 flex-col group overflow-hidden relative'
+        className='group w-full h-[500px] md:h-[700px]  bg-[#314964] flex justify-center items-center lg:w-1/2 flex-col overflow-hidden relative'
         href='https://taskmanagerol.github.io/Blog/2023/06/24/CSS/#CSS%E4%B8%89%E8%A7%92%E5%BD%A2%E7%BB%98%E5%88%B6'
         target='_blank'
       >
@@ -146,7 +146,7 @@ const BlogBox = () => {
 const ProjectBox = () => {
   return (
     <div 
-      className="w-4/5 my-[3rem] bg-[#a9a9a9] relative flex flex-wrap mb-[15rem]"
+      className="w-4/5 mt-[5rem]  relative flex flex-wrap mb-[15rem] justify-center"
     >
       <div 
         className='absolute top-[-5rem] left-2 text-[80px] font-bold md:text-[100px] md:top-[-6rem] z-30'
@@ -157,13 +157,13 @@ const ProjectBox = () => {
         Project.
       </div>
 
-      <a
-        className='w-full h-[500px] md:h-[500px]  bg-[#f7e8e4] flex justify-center items-center lg:w-full flex-col group overflow-hidden relative'
-        href='https://taskmanagerol.space/todolist'
+      {/* <a
+        className='w-full h-[500px] md:h-[500px]  bg-[#f7e8e4] flex justify-center items-center lg:w-1/2 flex-col group overflow-hidden relative'
+        href=''
         target='_blank'
       >
         <div 
-          className=' w-4/5 text-[#000] text-[34px] md:text-[46px] font-black tracking-[-0.3px] font-[TT] transition-all group-hover:mb-2 flex flex-wrap justify-center items-center break-words text-center mt-[40px]'
+          className='w-4/5 text-[#000] text-[34px] md:text-[46px] font-black tracking-[-0.3px] font-[TT] transition-all group-hover:mb-2 flex flex-wrap justify-center items-center break-words text-center mt-[40px]'
         >
           TaskList
         </div>
@@ -172,6 +172,27 @@ const ProjectBox = () => {
         </div>
         <div className='w-3/5 text-[#000] tracking-[-0.3px] transition-all group-hover:mt-2 text-center mb-[40px]'>
           Can I complete all deadline while suffering from amnesia.A TODO site.
+        </div>
+        <div className='absolute bg-black w-[80px] md:w-[120px] h-[40px] md:h-[60px] right-[10px] md:right-[40px] top-[-60px] transition-all ease-in-out duration-200 text-[#fff] flex justify-center items-center group-hover:top-0'>
+          <div className='mb-[20px] opacity-0 transition-all duration-200 ease-in group-hover:opacity-100 group-hover:mb-0 text-[12px] tracking-[-0.3px]'>view project</div>
+        </div>
+      </a> */}
+
+      <a
+        className='w-full h-[500px] md:h-[500px]  bg-[#f7e8e4] flex justify-center items-center lg:w-full flex-col group overflow-hidden relative'
+        href='https://taskdraw.taskmanagerol.online/'
+        target='_blank'
+      >
+        <div 
+          className=' w-4/5 text-[#000] text-[34px] md:text-[46px] font-black tracking-[-0.3px] font-[TT] transition-all group-hover:mb-2 flex flex-wrap justify-center items-center break-words text-center mt-[40px]'
+        >
+          TaskDraw
+        </div>
+        <div className='h-[175px] md:h-[250px] flex justify-center items-center'>
+          <div className='animate-tasklist'>T</div>
+        </div>
+        <div className='w-3/5 text-[#000] tracking-[-0.3px] transition-all group-hover:mt-2 text-center mb-[40px]'>
+          Let's draw with any one.
         </div>
         <div className='absolute bg-black w-[80px] md:w-[120px] h-[40px] md:h-[60px] right-[10px] md:right-[40px] top-[-60px] transition-all ease-in-out duration-200 text-[#fff] flex justify-center items-center group-hover:top-0'>
           <div className='mb-[20px] opacity-0 transition-all duration-200 ease-in group-hover:opacity-100 group-hover:mb-0 text-[12px] tracking-[-0.3px]'>view project</div>
@@ -265,7 +286,7 @@ const HoverText = ({value}:{value:Boolean}) => {
   },[value])
   return(
     <div 
-      className='absolute w-screen h-screen top-0 left-0 z-50 flex justify-center items-center'  
+      className={`${value?"z-50":"z-0"} absolute w-screen h-screen top-0 left-0  flex justify-center items-center`}
     >
       <div 
         className={`${!firstTime?'notext':value?'animate-havetext':'animate-notext'} w-full h-full flex justify-center items-center transition-all`}
@@ -322,8 +343,9 @@ export default function Home() {
       <HoverText value={hoverValue} />
       <GithubIcon onClick={handleIconClick} value={hoverValue}/>
       <IndexBox/>
-      <BlogBox/>
+      
       <ProjectBox/>
+      <BlogBox/>
       <BottomWave/>
     </div>
   );
